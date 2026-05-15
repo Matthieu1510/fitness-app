@@ -1,50 +1,47 @@
-/* ===== VARIABLES ===== */
-:root {
-  --bg: #0b0f14;
-  --surface: #111827;
-  --card: #1f2937;
-  --accent: #e63946;
-  --text: #f9fafb;
-  --muted: #9ca3af;
-}
-
-/* ===== RESET ===== */
+/* Remove default margin/padding on everything */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Basic body styles */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #0b0f14 0%, #0a0c10 100%);
-  color: var(--text);
+  background-color: #0f0f0f;
+  color: #f0f0f0;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+/* Remove bullet points from lists */
 ul {
   list-style: none;
 }
 
-/* ===== NAV ===== */
+/* Remove underline from links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* navbar*/
 .navbar {
-  background: #0f172a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
-  z-index: 1000;
+  background-color: #111;
+  position: sticky;
   top: 0;
+  z-index: 1000;
+  /* stays at top when scrolling */
+  border-bottom: 1px solid #222;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: var(--accent);
+  color: #e63946;
+  letter-spacing: 2px;
 }
 
 .nav-links {
@@ -54,40 +51,45 @@ ul {
 
 .nav-links a {
   color: #aaa;
+  font-size: 15px;
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: white;
 }
 
+/* hamburger button - only shows on small screens */
 .hamburger {
   display: none;
   background: none;
-  border: 0;
-  color: #fff;
+  border: none;
+  color: white;
   font-size: 24px;
+  cursor: pointer;
 }
 
-/* ===== MOBILE MENU ===== */
+/* mobile dropdown - hidden by default */
 .mobile-menu {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  background: #111827;
   display: none;
   flex-direction: column;
-  padding: 20px;
-  gap: 15px;
-  z-index: 999;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background-color: #1a1a1a;
+  padding: 10px 40px;
+  gap: 12px;
+  border-bottom: 1px solid #222;
 }
 
+.mobile-menu a {
+  color: #aaa;
+  font-size: 15px;
+  padding: 6px 0;
+}
+
+/* class i will add with JS to show the menu */
 .mobile-menu.open {
   display: flex;
 }
 
-/* ===== HERO ===== */
+/* hero section*/
 .hero {
   padding: 80px 40px;
   text-align: center;
@@ -98,154 +100,286 @@ ul {
   );
 }
 
-.hero h1 {
+.hero-text h1 {
   font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-.hero p {
-  max-width: 520px;
-  margin: 20px auto;
+.hero-text p {
+  font-size: 17px;
   color: #aaa;
+  max-width: 520px;
+  margin: 0 auto 30px auto;
+  line-height: 1.7;
 }
 
-.btn-main,
-.btn-outline {
-  display: inline-block;
-  padding: 12px 26px;
-  border-radius: 8px;
-  margin: 5px;
-}
-
+/* main download button */
 .btn-main {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(255, 59, 92, 0.25);
+  background-color: #e63946;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 12px;
 }
 
+.btn-main:hover {
+  background-color: #ff6b6b;
+}
+
+/* outline/ghost button */
 .btn-outline {
   border: 2px solid #444;
   color: #aaa;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-h1,
-h2 {
-  letter-spacing: -0.5px;
+.btn-outline:hover {
+  border-color: #888;
+  color: white;
 }
 
-p {
-  line-height: 1.6;
+/* stats row below hero text */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 60px;
 }
 
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent);
-  margin: 10px auto 0;
-  border-radius: 10px;
+.stat-box h2 {
+  font-size: 32px;
+  color: #e63946;
 }
 
-/* ===== SECTIONS ===== */
-.section {
+.stat-box p {
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* features sections */
+.features {
   padding: 80px 40px;
+  background-color: #141414;
   text-align: center;
 }
 
-.section-sub {
-  color: var(--muted);
-  margin-bottom: 40px;
-}
-
-/* ===== CARDS ===== */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 960px;
-  margin: auto;
-}
-
-.card {
-  background: rgba(31, 41, 55, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-}
-
-.card-icon {
-  color: var(--accent);
-  font-size: 28px;
+.features h2 {
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-/* ===== STEPS ===== */
+.section-sub {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+/* card grid - auto fills columns */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 30px 24px;
+  text-align: left;
+}
+
+.card:hover {
+  border-color: #e63946;
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+  color: #e63946;
+}
+
+/* make sure flaticon icons display correctly */
+.card-icon i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* how it works section*/
+.how-it-works {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: #0f0f0f;
+}
+
+.how-it-works h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
 .steps-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
+  margin-top: 50px;
   flex-wrap: wrap;
+  /* wraps on small screens */
+}
+
+.step {
+  max-width: 220px;
+  text-align: center;
 }
 
 .step-number {
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  background: var(--accent);
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
+  background-color: #e63946;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto 16px auto;
 }
 
-/* ===== DOWNLOAD ===== */
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* DOWNLOAD SECTION*/
+.download {
+  padding: 80px 40px;
+  background-color: #141414;
+  text-align: center;
+}
+
+.download h2 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.download p {
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 36px;
+}
+
 .download-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .store-btn {
-  padding: 12px 24px;
-  background: var(--card);
+  background-color: #1c1c1c;
   border: 1px solid #333;
+  color: white;
+  padding: 14px 28px;
   border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* ===== FOOTER ===== */
+.store-btn i {
+  font-size: 20px;
+  color: #e63946;
+}
+
+.store-btn:hover {
+  border-color: #e63946;
+  background-color: #222;
+}
+
+/* FOOTER */
 footer {
-  padding: 20px;
+  background-color: #111;
+  border-top: 1px solid #222;
+  padding: 24px 40px;
   text-align: center;
-  background: #111827;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+footer p {
+  color: #555;
+  font-size: 13px;
+  margin-bottom: 10px;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-  color: #666;
+  gap: 24px;
 }
 
-/* ===== RESPONSIVE ===== */
+.footer-links a {
+  color: #666;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: #aaa;
+}
+
 @media (max-width: 768px) {
+  /* hide nav links, show hamburger */
   .nav-links {
     display: none;
   }
+
   .hamburger {
     display: block;
   }
-  .hero h1 {
+
+  .hero-text h1 {
     font-size: 32px;
   }
+
+  .hero-stats {
+    gap: 30px;
+  }
+
   .navbar {
     padding: 16px 20px;
+  }
+
+  .hero,
+  .features,
+  .how-it-works,
+  .download {
+    padding: 60px 20px;
   }
 }
