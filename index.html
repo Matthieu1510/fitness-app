@@ -4,117 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fitness App</title>
-
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="logo">Fitness App</div>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <div class="logo">Fitness App</div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#download">Download</a></li>
+    </ul>
+    <!-- hamburger button for mobile-->
+    <button class="hamburger" id="menuBtn">&#9776;</button>
+  </nav>
 
-  <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#how-it-works">How It Works</a></li>
-    <li><a href="#download">Download</a></li>
-  </ul>
-
-  <button class="hamburger" id="menuBtn">&#9776;</button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#features">Features</a>
-  <a href="#how-it-works">How It Works</a>
-  <a href="#download">Download</a>
-</div>
-
-<section class="hero">
-  <div class="hero-text">
-    <h1>Train Smarter.<br>Get Stronger.</h1>
-    <p>Fitness App is your personal coach application that keeps you motivated and on track.</p>
-    <a href="#download" class="btn-main">Download Free</a>
-    <a href="#features" class="btn-outline">Learn More</a>
+  <!-- dropdown menu, hidden by default -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#download">Download</a>
   </div>
-</section>
 
-<section class="features section" id="features">
-  <h2>Why Use Fitness App?</h2>
-  <p class="section-sub">Everything you need to reach your goal.</p>
-
-  <div class="cards-container">
-
-    <div class="card">
-      <div class="card-icon"><i class="fi fi-rr-gym"></i></div>
-      <h3>Workout Plans</h3>
-      <p>Personalised plans based on your goals.</p>
+  <!-- Hero-->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Train Smarter.<br>Get Stronger.</h1>
+      <p>Fitness App is your personal coach companion. 
+         Track workouts, follow plans, and hit your goals — 
+         all from your phone.</p>
+      <a href="#download" class="btn-main">Download Free</a>
+      <a href="#features" class="btn-outline">Learn More</a>
     </div>
 
-    <div class="card">
-      <div class="card-icon"><i class="fi fi-rr-chart-histogram"></i></div>
-      <h3>Track Progress</h3>
-      <p>Log reps, sets and calories easily.</p>
+    <!-- simple stats row -->
+    <div class="hero-stats">
+      <div class="stat-box">
+        <h2>2M+</h2>
+        <p>Users</p>
+      </div>
+      <div class="stat-box">
+        <h2>500+</h2>
+        <p>Workouts</p>
+      </div>
+      <div class="stat-box">
+        <h2>4.9 Stars</h2>
+        <p>Rating</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <div class="card-icon"><i class="fi fi-rr-flame"></i></div>
-      <h3>Daily Streaks</h3>
-      <p>Stay consistent with challenges.</p>
+  <!-- Features section -->
+  <section class="features" id="features">
+    <h2>Why Use Fitness App?</h2>
+    <p class="section-sub">You have everything you need to reach your goals, not only physical but mental also.</p>
+
+    <div class="cards-container">
+
+      <!-- feature card 1 -->
+      <div class="card">
+        <div class="card-icon"><i class="fi fi-rr-gym"></i></div>
+        <h3>Workout Plans</h3>
+        <p>Get personalised plans based on your goals and fitness level.</p>
+      </div>
+
+      <!-- feature card 2 -->
+      <div class="card">
+        <div class="card-icon"><i class="fi fi-rr-chart-histogram"></i></div>
+        <h3>Track Progress</h3>
+        <p>Log your reps, sets, calories and see your improvements with simple charts.</p>
+      </div>
+
+      <!-- feature card 3 -->
+      <div class="card">
+        <div class="card-icon"><i class="fi fi-rr-flame"></i></div>
+        <h3>Daily Streaks</h3>
+        <p>Stay consistent with daily streaks and challenges.</p>
+      </div>
+
+      <!-- feature card 4 -->
+      <div class="card">
+        <div class="card-icon"><i class="fi fi-rr-users"></i></div>
+        <h3>Community</h3>
+        <p>Join millions of athletes and users and share your experience.</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card">
-      <div class="card-icon"><i class="fi fi-rr-users"></i></div>
-      <h3>Community</h3>
-      <p>Join millions of users worldwide.</p>
+  <!-- How it works section -->
+  <section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <p class="section-sub">3 simple steps to start your day</p>
+
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Create Profile</h3>
+        <p>Set up your goals and fitness level.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Get Your Plan</h3>
+        <p>Receive a personalised workout plan.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Track & Improve</h3>
+        <p>Log sessions, track progress and keep your streak going.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<section class="how-it-works section" id="how-it-works">
-  <h2>How It Works</h2>
-  <p class="section-sub">3 simple steps</p>
-
-  <div class="steps-container">
-    <div class="step">
-      <div class="step-number">1</div>
-      <h3>Create Profile</h3>
-      <p>Set your goals.</p>
+  <!-- CTA section -->
+  <section class="download" id="download">
+    <h2>Ready to Start?</h2>
+    <p>Download Fitness App for free today. No excuses.</p>
+    <div class="download-buttons">
+      <a href="#" class="store-btn"><i class="fi fi-rr-apple-dumbbell"></i> App Store</a>
+      <a href="#" class="store-btn"><i class="fi fi-rr-play"></i> Google Play</a>
     </div>
+  </section>
 
-    <div class="step">
-      <div class="step-number">2</div>
-      <h3>Get Plan</h3>
-      <p>Receive workouts.</p>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Fitness App.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
     </div>
+  </footer>
 
-    <div class="step">
-      <div class="step-number">3</div>
-      <h3>Track</h3>
-      <p>Improve daily.</p>
-    </div>
-  </div>
-</section>
-
-<section class="download section" id="download">
-  <h2>Ready to Start?</h2>
-  <p>Download Fitness App now.</p>
-
-  <div class="download-buttons">
-    <a href="#" class="store-btn"><i class="fi fi-rr-apple-dumbbell"></i> App Store</a>
-    <a href="#" class="store-btn"><i class="fi fi-rr-play"></i> Google Play</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Fitness App</p>
-  <div class="footer-links">
-    <a href="#">Privacy</a>
-    <a href="#">Terms</a>
-    <a href="#">Contact</a>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
